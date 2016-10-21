@@ -74,6 +74,9 @@ export default (Vue, Options = {}) => {
       _.on(el, 'resize', lazyLoadHandler)
       _.on(el, 'animationend', lazyLoadHandler)
       _.on(el, 'transitionend', lazyLoadHandler)
+      _.on(el, 'touchstar', lazyLoadHandler)
+      _.on(el, 'touchend', lazyLoadHandler)
+      _.on(el, 'touchmove', lazyLoadHandler)
     } else {
       Init.hasbind = false
       _.off(el, 'scroll', lazyLoadHandler)
@@ -82,6 +85,9 @@ export default (Vue, Options = {}) => {
       _.off(el, 'resize', lazyLoadHandler)
       _.off(el, 'animationend', lazyLoadHandler)
       _.off(el, 'transitionend', lazyLoadHandler)
+      _.off(el, 'touchstar', lazyLoadHandler)
+      _.off(el, 'touchend', lazyLoadHandler)
+      _.off(el, 'touchmove', lazyLoadHandler)
     }
   }
 
